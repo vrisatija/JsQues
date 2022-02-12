@@ -1,21 +1,26 @@
-function armstrongNos(n)
+function printArmstrong(n)
 {
-    for(let num=0;num<=n;num++)
+    for(let number=0;number<=n;number++)
     {
+        if(isArmstrong(number))
+            console.log(number)
+    }   
+}
+function isArmstrong(number)
+{
         let ans=0
-        let currentNum=num
+        let currentNum=number
         while(currentNum!=0)
         {
             let digit=currentNum%10
             ans+=parseInt(Math.pow(digit,3))
             currentNum=parseInt(currentNum/10)
         }
-    
-        if(ans===num)
+        if(ans===number)
         {
-            console.log(num)
+            return 1
         }
-    }
+        return 0
 }
 var input=407;
-armstrongNos(input)
+printArmstrong(input)
